@@ -14,24 +14,20 @@ This application is designed as an end-to-end tracking solution, featuring live 
 ### 📸 Screenshots
 
 
-###  Login Page (with Art) 
+###  Login Page 
 <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/f4496fa6-46ee-4edd-b317-36e6cfabefbd" />
 
+
 ### Sender Dashboard (Charts) 
-<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/78f5790d-6639-4a04-af78-55dc72452966" />
+<img width="1920" height="1852" alt="screencapture-localhost-5175-2025-11-12-05_23_59" src="https://github.com/user-attachments/assets/793db30a-3b30-4355-8485-790af027fc3e" />
 
 
 ### Driver Signature Capture
-<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/2f6bdaef-e676-40fe-98c9-86408b492264" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/c7f2c3e5-29a9-4c86-821f-5a827e5aa59a" />
+
 
 ### Driver Revenue Tab 
-<img width="1920" height="1080" alt="Screenshot 2025-11-12 012814" src="https://github.com/user-attachments/assets/2a2f75f9-772e-431c-baef-630f84a440be" />
-<img width="1920" height="1080" alt="Screenshot 2025-11-12 012820" src="https://github.com/user-attachments/assets/7c062d1d-2bcf-4c63-b04a-7582d60a3c42" />
-<img width="1920" height="1080" alt="Screenshot 2025-11-12 012824" src="https://github.com/user-attachments/assets/4c349852-36d1-4bfc-9b55-a0b573d077b8" />
-
-
-
-
+<img width="1920" height="2527" alt="screencapture-localhost-5174-2025-11-12-05_22_21" src="https://github.com/user-attachments/assets/242e22bf-42b1-4bcb-980e-b208249fe481" />
 
 
 ### Live Tracking Modal 
@@ -39,8 +35,8 @@ This application is designed as an end-to-end tracking solution, featuring live 
 
 
 ### Receiver Dashboard (RTL) 
-<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/85f36551-0113-4206-9abf-48b0bc4ba1d6" />
-<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/798dc2b7-b219-4921-895f-3abf0867cbaa" />
+<img width="1920" height="1933" alt="screencapture-localhost-5173-2025-11-12-05_20_43" src="https://github.com/user-attachments/assets/e5016e5b-6250-4627-bbe1-337d25a813f5" />
+
 
 
 
