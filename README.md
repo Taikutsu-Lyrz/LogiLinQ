@@ -207,10 +207,17 @@ service cloud.firestore {
   }
 }
 ```
-
 Click "Publish" to save the rules.
 
-### 5. (Optional) Configure Fake GPS for Testing
+### 5. ⚠️ Important: Firebase Quota Warning
+The Firebase Spark (Free) Plan has a hard limit of 20,000 database writes per day.
+A real-time GPS tracker can use this quota in just a few hours. This project is already optimized to prevent this:
+• In src/pages/DriverDashboard.jsx, the watchPosition function is set with maximumAge: 60000.
+• This tells the app to only write the driver's location once per minute.
+If you change this value to be more frequent (like maximumAge: 0), your free quota will be exhausted very quickly and Firebase will lock your database. It is highly recommended to keep the 60,000ms (1 minute) setting.
+
+
+### 6. (Optional) Configure Fake GPS for Testing
 To test the driver's live location tracking without moving:
 
 Open src/services/ENABLE_FGPS_LOCATION.jsx.
@@ -219,7 +226,7 @@ Change const ENABLE_FGPS_LOCATION = false; to true.
 
 You can change the GPS_COORDINATESS to any location you want.
 
-### 6. Run the App
+### 7. Run the App
 You must restart your server after creating the .env file.
 
 ```bash
