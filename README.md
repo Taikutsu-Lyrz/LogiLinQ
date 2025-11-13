@@ -39,8 +39,6 @@ This application is designed as an end-to-end tracking solution, featuring live 
 
 
 
-
-
 ---
 
 ### ✨ Core Features
