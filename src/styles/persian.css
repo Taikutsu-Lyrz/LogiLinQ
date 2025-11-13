@@ -1,0 +1,133 @@
+/* Persian & English Font Enhancements - LOCAL FONTS */
+
+/* ============================================================ */
+/* PERSIAN FONTS */
+/* ============================================================ */
+@font-face {
+    font-family: 'Vazirmatn';
+    src: url('../components/fonts/Vazirmatn-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vazirmatn';
+    src: url('../components/fonts/Vazirmatn-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vazirmatn';
+    src: url('../components/fonts/Vazirmatn-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ============================================================ */
+/* ENGLISH FONTS (Inter) */
+/* ============================================================ */
+@font-face {
+    font-family: 'Inter';
+    src: url('../components/fonts/Inter-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../components/fonts/Inter-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../components/fonts/Inter-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../components/fonts/Inter-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../components/fonts/Inter-ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ============================================================ */
+/* ENGLISH LANGUAGE STYLING */
+/* ============================================================ */
+html[lang="en"],
+html[lang="en"] body,
+html[lang="en"] body * {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+}
+
+/* ============================================================ */
+/* PERSIAN LANGUAGE STYLING */
+/* ============================================================ */
+html[lang="fa"],
+html[lang="fa"] body,
+html[lang="fa"] body * {
+    font-family: 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+    font-weight: 500 !important;
+}
+
+/* ============================================================ */
+/* NAVBAR - EXTRA BOLD & LARGER (BOTH LANGUAGES) */
+/* ============================================================ */
+.navButton,
+button.navButton {
+    font-weight: 600 !important;
+    font-size: 1rem !important;
+}
+
+/* ============================================================ */
+/* PERSIAN SPECIFIC WEIGHT ADJUSTMENTS */
+/* ============================================================ */
+html[lang="fa"] h1,
+html[lang="fa"] h2,
+html[lang="fa"] h3,
+html[lang="fa"] h4,
+html[lang="fa"] h5,
+html[lang="fa"] h6 {
+    font-weight: 700 !important;
+}
+
+html[lang="fa"] .cardTitle,
+html[lang="fa"] .statValue,
+html[lang="fa"] .statLabel,
+html[lang="fa"] strong {
+    font-weight: 700 !important;
+}
+
+html[lang="fa"] button,
+html[lang="fa"] .button,
+html[lang="fa"] .buttonPrimary {
+    font-weight: 600 !important;
+}
+
+html[lang="fa"] label,
+html[lang="fa"] .label {
+    font-weight: 600 !important;
+}
+
+html[lang="fa"] .listItem strong {
+    font-weight: 700 !important;
+}

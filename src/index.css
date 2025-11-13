@@ -1,0 +1,14 @@
+/* ... (at the bottom of index.css) ... */
+
+@media print {
+    body * { visibility: hidden; }
+    #print-area, #print-area * { visibility: visible; }
+    #print-area {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        z-index: 9999;
+    }
+    .printPage { font-size: 10pt; }
+}

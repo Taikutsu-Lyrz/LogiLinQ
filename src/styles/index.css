@@ -1,0 +1,608 @@
+/* --- CSS Variables (Themes) --- */
+:root {
+    --color-primary: #1976D2; /* Blue */
+    --color-primary-dark: #0D47A1;
+    --color-secondary: #f0f0f0;
+    --color-secondary-dark: #e0e0e0;
+    --color-background: #f5f5f5;
+    --color-surface: #ffffff;
+    --color-text-primary: #212121;
+    --color-text-secondary: #757575;
+    --color-border: #e0e0e0;
+    --color-error: #D32F2F; /* Red */
+    --color-error-dark: #B71C1C;
+    --color-error-light: #FFEBEE;
+    --color-warning: #FFA000; /* Amber */
+    --color-warning-dark: #FF8F00;
+    --color-success: #4CAF50; /* Softer Green */
+    --color-success-dark: #388E3C;
+    --color-success-light: #E8F5E9;
+    --color-edit: #1976D2; /* Blue */
+    --color-edit-dark: #0D47A1;
+    --color-delete: #D32F2F; /* Red */
+    --color-complete: #4CAF50; /* Softer Green */
+    --color-complete-dark: #388E3C;
+    --color-track: #673AB7; /* Deep Purple */
+    --color-track-dark: #311B92;
+    --color-print: #607D8B; /* Blue Grey */
+    --color-print-dark: #37474F;
+    --color-google-border: #e0e0e0;
+    --color-google-bg: #ffffff;
+    --color-google-text: #212121;
+}
+
+[data-theme="dark"] {
+    --color-primary: #FFA500; /* Orange */
+    --color-primary-dark: #ff8f00;
+    --color-secondary: #2c2c2c;
+    --color-secondary-dark: #333333;
+    --color-background: #121212;
+    --color-surface: #1E1E1E;
+    --color-text-primary: #f0f0f0;
+    --color-text-secondary: #a0a0a0;
+    --color-border: #333333;
+    --color-error: #D32F2F; /* Red (keep consistent) */
+    --color-error-dark: #B71C1C;
+    --color-error-light: #2c1d1d;
+    --color-warning: #FFA000; /* Amber (keep consistent) */
+    --color-warning-dark: #FF8F00;
+    --color-success: #388E3C; /* Green (keep consistent) */
+    --color-success-dark: #1B5E20;
+    --color-success-light: #1c2a1d;
+    --color-edit: #FFA500; /* Orange */
+    --color-edit-dark: #FF8F00;
+    --color-delete: #D32F2F; /* Red */
+    --color-complete: #388E3C; /* Green */
+    --color-complete-dark: #1B5E20;
+    --color-track: #b39ddb; /* Lighter Purple */
+    --color-track-dark: #9575cd;
+    --color-print: #b0bec5; /* Lighter Blue Grey */
+    --color-print-dark: #90a4ae;
+    --color-google-border: #333333;
+    --color-google-bg: #1E1E1E;
+    --color-google-text: #f0f0f0;
+}
+/* --- END Themes --- */
+
+
+body { margin: 0; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+@keyframes fadeInOut { 0%{opacity:0;transform:translateY(-10px)} 10%{opacity:1;transform:translateY(0)} 90%{opacity:1;transform:translateY(0)} 100%{opacity:0;transform:translateY(-10px)} }
+
+/* Smooth content transitions */
+/* --- Hides the scrollbar but keeps scrolling + Animation support --- */
+.main-content-area {
+    position: relative;
+    overflow: hidden; /* For animations */
+    scrollbar-width: none; /* Hide scrollbar */
+    -ms-overflow-style: none; /* Hide scrollbar IE/Edge */
+}
+.main-content-area::-webkit-scrollbar {
+    display: none; /* Hide scrollbar Chrome/Safari */
+}
+
+
+/* Tab content wrapper with animation */
+.tab-content {
+    animation: slideIn 1s ease-out;
+}
+
+/* Slide in from the right */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Optional: Fade-in effect (alternative) */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Optional: Slide from left (for RTL) */
+[dir="rtl"] .tab-content {
+    animation: slideInRTL 1s ease-out;
+}
+
+@keyframes slideInRTL {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* --- ADDED: Base flex display for desktop layout --- */
+.dashboard-layout-responsive {
+    display: flex;
+}
+
+/* --- Mobile-first utility classes --- */
+/* By default, mobile-only items are hidden */
+.mobile-menu-only-item {
+    display: none !important;
+}
+/* By default, desktop-only items are shown as inline-flex */
+.desktop-only-item {
+    display: inline-flex;
+    align-items: center;
+}
+/* --- End utility classes --- */
+
+/* --- Default state for mobile menu button --- */
+.mobile-menu-button {
+    display: none;
+}
+
+/* --- UPDATED: Media Query for Mobile (max-width: 900px) --- */
+@media (max-width: 900px) {
+    /* Vertical stacking for dashboard layout */
+    .dashboard-layout-responsive {
+        flex-direction: column;
+
+    }
+    /* Vertical stacking for sender overview grid */
+    .overview-grid-responsive {
+        flex-direction: column;
+    }
+
+    /* --- Mobile Menu Styles --- */
+    .mobile-menu-button {
+        display: block; /* Show hamburger icon */
+    }
+
+    /* Hide desktop-only items */
+    .desktop-only-item {
+        display: none !important; /* Hide theme toggle and logout */
+    }
+
+    /* Show mobile-only items */
+    .mobile-menu-only-item {
+        display: block !important; /* Show new items in the nav */
+        width: 100%;
+    }
+
+    .sidebar-nav-responsive {
+        width: 100%;
+        overflow: hidden; /* Hide content while sliding */
+        max-height: 0; /* Animate height */
+        opacity: 0;
+        transition: max-height 0.4s ease-out, opacity 0.3s ease-out, transform 0.4s ease-out;
+        transform: translateY(-10px);
+        /* This applies to the nav menu itself, not the parent */
+        flex-shrink: 0;
+        width: 100%; /* Take full width on mobile */
+    }
+
+    .sidebar-nav-responsive.is-open {
+        max-height: 500px; /* Allow it to grow */
+        opacity: 1;
+        transform: translateY(0);
+    }
+    /* --- End Mobile Menu Styles --- */
+}
+/* --- END Media Query --- */
+
+
+/* --- Global Hover/Focus/Other Styles --- */
+
+/* Focus style using CSS variable */
+input:focus, textarea:focus, select:focus {
+    border-bottom-color: var(--color-primary) !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+/* Nav button hover (CLEANED UP) */
+.navButton {
+    background-color: transparent;
+    color: var(--color-text-secondary);
+    transition: background-color 0.2s ease, color 0.2s ease;
+    text-align: left; /* <-- ADD THIS (default for LTR) */
+}
+/* Nav button hover (CLEANED UP) */
+/* Nav button hover (Corrected) */
+
+/* This rule styles the INACTIVE tabs on hover */
+.navButton:hover {
+    background-color: var(--color-secondary) !important;
+    color: var(--color-text-primary) !important;
+}
+
+/* This rule styles the ACTIVE tab on hover */
+.navButton[style*="color: white"]:hover {
+    background-color: var(--color-primary-dark) !important;
+    color: white !important;
+}
+
+/* Theme toggle hover */
+.themeToggleButton:hover {
+    background-color: var(--color-secondary);
+    border-color: var(--color-text-secondary);
+}
+/* --- Input Field Reset & Style --- */
+/* This rule targets all text-based inputs and applies your style */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+input[type="number"] {
+    all: unset;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    outline: none;
+    box-sizing: border-box;
+
+    /* Your Custom Design */
+    padding: 14px 2px;
+    font-size: 1rem;
+    border: none;
+    border-bottom: 2px solid var(--color-border);
+    color: var(--color-text-primary);
+    transition: border-color 0.2s ease;
+}
+
+/* Role card hover */
+.roleButtonCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+.roleButtonCard:hover svg { stroke: var(--color-primary); }
+
+/* Button hover effects */
+.button:hover {
+    background-color: var(--color-secondary-dark);
+    background-image: none;
+}
+.buttonPrimary:hover {
+    background-color: var(--color-primary-dark);
+    background-image: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+.buttonWarning:hover {
+    background-color: var(--color-error-dark);
+    background-image: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+/* Disabled state for all buttons */
+.button:disabled, .buttonPrimary:disabled, .buttonWarning:disabled {
+    background-color: #bdbdbd !important; /* Use important to override gradients */
+    color: #9e9e9e !important;
+    cursor: not-allowed !important;
+    box-shadow: none !important;
+    background-image: none !important;
+}
+/* Action button hover */
+.actionButton:hover {
+    background-image: none;
+    opacity: 0.8;
+}
+
+/* Leaflet map styles */
+.leaflet-container { z-index: 10; }
+.map-truck-icon {
+    background: transparent;
+    border: none;
+    /* Center the emoji */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Print media query */
+
+@media print {
+    /* Hide every element on the page */
+    body * {
+        visibility: hidden;
+    }
+
+    /* Make the print-area and everything inside it visible */
+    #print-area, #print-area * {
+        visibility: visible;
+    }
+
+    /* Force the print-area to display as a block and position it */
+    #print-area {
+        display: block !important; /* <-- This is the critical fix */
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        z-index: 9999;
+    }
+{
+    .printPage { font-size: 10pt; }
+}
+    /* Make the print-area and everything inside it visible */
+    #print-area, #print-area * {
+        visibility: visible;
+    }
+
+    /* Pull the print-area out of hiding and position it for printing */
+    #print-area {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: auto;
+        overflow: visible;
+        z-index: 9999;
+    }
+
+    .printPage {
+        font-size: 10pt;
+        margin: 0; /* Remove any page margins */
+        padding: 0;
+    }
+}
+/* --- Hides the scrollbar but keeps scrolling --- */
+
+
+/* --- Header Logo Styles --- */
+.header-logo {
+    /* You can adjust the size */
+    margin-top: 5px;
+    height: 40px;
+    width: 40px;
+}
+/* --- Hides the scrollbar for the modal --- */
+.modal-content-area {
+    /* Hide scrollbar for Firefox */
+    scrollbar-width: none;
+
+    /* Hide scrollbar for IE and Edge */
+    -ms-overflow-style: none;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.modal-content-area::-webkit-scrollbar {
+    display: none;
+}
+
+/* ========================================
+   FORCE ALL PRINT AREAS TO ALWAYS BE LTR
+   ======================================== */
+
+/* Sender print area */
+#print-area,
+#print-area * {
+    direction: ltr !important;
+    text-align: left !important;
+}
+
+/* Driver invoice print area */
+.invoice-print-area,
+.invoice-print-area * {
+    direction: ltr !important;
+    text-align: left !important;
+}
+
+/* General print page class */
+.printPage,
+.printPage * {
+    direction: ltr !important;
+    text-align: left !important;
+}
+
+/* Override flex directions in print */
+#print-area .buttonGroup,
+#print-area .actionButtonGroup,
+.invoice-print-area .buttonGroup,
+.invoice-print-area .actionButtonGroup {
+    flex-direction: row !important;
+}
+
+/* Force LTR during actual printing */
+@media print {
+    body {
+        direction: ltr !important;
+    }
+
+    /* Hide everything except print areas */
+    body * {
+        visibility: hidden;
+    }
+
+    /* Show only print content */
+    #print-area,
+    #print-area *,
+    .invoice-print-area,
+    .invoice-print-area * {
+        visibility: visible;
+        direction: ltr !important;
+        text-align: left !important;
+    }
+
+    /* Position print areas */
+    #print-area,
+    .invoice-print-area {
+        display: block !important;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        z-index: 9999;
+    }
+
+    .printPage {
+        font-size: 10pt;
+        margin: 0;
+        padding: 0;
+        direction: ltr !important;
+    }
+}
+
+
+/* By default (in light mode):
+  - Show the black logo
+  - Hide the white logo
+*/
+.light-mode-logo {
+    display: block;
+}
+.dark-mode-logo {
+    display: none;
+}
+
+/* When [data-theme="dark"] is active:
+  - Hide the black logo
+  - Show the white logo
+*/
+[data-theme="dark"] .light-mode-logo {
+    display: none;
+}
+[data-theme="dark"] .dark-mode-logo {
+    display: block;
+}
+
+
+
+/* --- RTL (Right-to-Left) Styles --- */
+
+/* --- RTL (Right-to-Left) Styles --- */
+[dir="rtl"] {
+    text-align: right;
+
+}
+/* This flips the RTL layout ONLY on desktop */
+@media (min-width: 901px) {
+    [dir="rtl"] .dashboard-layout-responsive {
+        flex-direction: row-reverse;
+    }
+}
+[dir="rtl"] .header-inner {
+    flex-direction: row-reverse;
+}
+[dir="rtl"] .buttonGroup {
+    flex-direction: row-reverse;
+}
+[dir="rtl"] .navButton {
+    text-align: right;
+}
+[dir="rtl"] .label {
+    text-align: right;
+}
+/* This rule targets all text-based inputs for RTL */
+[dir="rtl"] input[type="text"],
+[dir="rtl"] input[type="password"],
+[dir="rtl"] input[type="email"],
+[dir="rtl"] input[type="tel"],
+[dir="rtl"] input[type="number"] {
+    text-align: right;
+}
+
+[dir="rtl"] .listItemDetails {
+    flex-direction: row-reverse;
+}
+[dir="rtl"] .actionButtonGroup {
+    flex-direction: row-reverse;
+}
+[dir="rtl"] .stepperContainer {
+    flex-direction: row-reverse;
+}
+[dir="rtl"] .stepNavButtons {
+    flex-direction: row-reverse;
+}
+/* ... (inside your [dir="rtl"] block) ... */
+
+/* Flips the login card for RTL */
+
+/* --- VVV THIS IS THE NEW FIX VVV --- */
+
+/* This is the DEFAULT (LTR) position */
+.dashboard-header-buttons {
+    right: 0;
+    left: auto;
+}
+
+/* This is the RTL position */
+[dir="rtl"] .dashboard-header-buttons {
+    right: auto;
+    left: 0;
+}
+/* ... (inside your [dir="rtl"] block) ... */
+
+/* Flips the login card for RTL */
+
+/* Flips the login card for RTL *//* Flips the login card for RTL */
+[dir="rtl"] .login-card-illustration {
+    order: 1; /* Illustration on the left */
+}
+[dir="rtl"] .login-card-form {
+    order: 2; /* Form on the right */
+    borderRight: none; /* Remove the LTR border */
+
+}
+
+
+/* ... (your mobile styles) ... */
+
+@media (max-width: 900px) {
+    /* ... (your existing mobile styles) ... */
+
+    /* VVV ADD THIS RULE VVV */
+    /* Hides the illustration on mobile */
+    .login-card-illustration {
+        display: none;
+    }
+    /* ^^^ END OF NEW RULE ^^^ */
+}
+/* --- Login Illustration Theme --- */
+
+/* Default (light mode) image */
+.login-card-illustration {
+    background-image: url(public/login-art-light.svg);
+}
+
+/* Dark mode image */
+[data-theme="dark"] .login-card-illustration {
+    background-image: url(public/login-art-dark.svg);
+}
+
+@media print {
+    body * { visibility: hidden; }
+    #print-area, #print-area * { visibility: visible; }
+    #print-area {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        z-index: 9999;
+    }
+    .printPage { font-size: 10pt; }
+}
+
+/* Copy button animation */
+.copy-button {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.copy-button:active {
+    transform: scale(0.95) !important;
+}
+
+.copy-button:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
