@@ -43,7 +43,7 @@ This application is designed as an end-to-end tracking solution, featuring live 
 
 ### ✨ Core Features
 
-I've broken down the features by what each user can do.
+Below are the features available to users.
 
 #### 🌐 General Platform Features
 * **Authentication:** Full email/password and Google Sign-In flow via Firebase Auth.
