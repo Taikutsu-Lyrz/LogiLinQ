@@ -11,7 +11,7 @@ This application is designed as an end-to-end tracking solution, featuring live 
 
 ---
 
-### 📸 Screenshots
+###  Screenshots
 
 
 ###  Login Page 
@@ -41,11 +41,11 @@ This application is designed as an end-to-end tracking solution, featuring live 
 
 ---
 
-### ✨ Core Features
+###  Core Features
 
 Below are the features available to users.
 
-#### 🌐 General Platform Features
+####  General Platform Features
 * **Authentication:** Full email/password and Google Sign-In flow via Firebase Auth.
 * **Password Reset:** A "Forgot Password?" flow that sends a secure reset link to the user's email.
 * **Profile Management:** A dedicated "My Profile" tab for all users to update their display name, which syncs across Firebase Auth and Firestore.
@@ -62,7 +62,7 @@ Below are the features available to users.
     * App is configured as an installable **Progressive Web App (PWA)** via `vite-plugin-pwa`.
     * Firestore data is cached locally using `enableIndexedDbPersistence` for offline viewing.
 
-#### 👨‍💼 Sender Dashboard (The "Control Tower")
+####  Sender Dashboard (The "Control Tower")
 * **Create Shipments:** A 3-step (Receiver, Driver, Goods) form with client-side validation.
 * **Live Tracking Modal:** Track "In Transit" shipments on a real-time map. The modal updates live with data from Firestore.
 * **View Proof of Delivery:** As soon as a driver marks a job "Delivered," the Sender can open the details modal and instantly see the captured signature.
@@ -76,7 +76,7 @@ Below are the features available to users.
     * **AI Recap Tab:** Generate an AI-powered summary of all shipment operations using the **Perplexity API**. The prompt is sent in the user's selected language.
 * **Print Manifest:** Print a formatted shipment manifest for any delivery.
 
-#### 🚚 Driver Dashboard (The "On-the-Road" App)
+####  Driver Dashboard (The "On-the-Road" App)
 * **Job Management:**
     * Automatically loads all jobs assigned to the driver's email via a live `onSnapshot` listener.
     * **Manual Job Discovery:** A "Find Shipment" form allows drivers to find *any* "Pending" job and "Claim" it, supporting a first-come, first-served model.
@@ -99,7 +99,7 @@ Below are the features available to users.
 * **Invoice Printing:** Drivers can print a detailed, formatted invoice for any completed job.
 * **Archiving:** Drivers can "Archive" or "Permanently Delete" jobs from their personal view (this does not delete the shipment for the Sender/Receiver).
 
-#### 📦 Receiver Dashboard (The "Customer" Portal)
+####  Receiver Dashboard (The "Customer" Portal)
 * **Manual Tracking:** Track any shipment by its ID to see live status and details.
 * **Claim Shipments:** A "Save to My List" button allows receivers to "claim" a manually-tracked shipment and add it to their personal dashboard.
 * **Live Tracking Modal:**
@@ -115,7 +115,7 @@ Below are the features available to users.
 
 ---
 
-### 🛠 Tech Stack
+###  Tech Stack
 
 | Category | Technology | Version |
 | :--- | :--- | :--- |
@@ -132,7 +132,7 @@ Below are the features available to users.
 
 ---
 
-### 🚀 Getting Started
+###  Getting Started
 
 Follow these instructions to get the project running locally.
 
